@@ -49,6 +49,7 @@ void printKiloBytes(uint32_t kiloBytes) {
   // for (int i = 0; i < kiloBytes; ++i) {
   //   SERIAL_TO_TEST.print(chars1000);
   // }
+  Serial.println();
   auto diffMs = millis() - start;
   SERIAL_TO_TEST.println("print " + String(kiloBytes) + "K for " +
                          String(diffMs) + "ms");
