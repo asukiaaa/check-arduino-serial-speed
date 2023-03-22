@@ -22,21 +22,30 @@ void printWithScaleChar(float val) {
   }
 }
 
-String chars100 = String("0aaaaaaaaa") + "1aaaaaaaaa" + "2aaaaaaaaa" +
-                  "3aaaaaaaaa" + "4aaaaaaaaa" + "5aaaaaaaaa" + "6aaaaaaaaa" +
-                  "7aaaaaaaaa" + "8aaaaaaaaa" + "9aaaaaaaaa";
+// String chars100 = String("0aaaaaaaaa") + "1aaaaaaaaa" + "2aaaaaaaaa" +
+//                   "3aaaaaaaaa" + "4aaaaaaaaa" + "5aaaaaaaaa" + "6aaaaaaaaa" +
+//                   "7aaaaaaaaa" + "8aaaaaaaaa" + "9aaaaaaaaa";
 
-String chars1000 = chars100 + chars100 + chars100 + chars100 + chars100 +
-                   chars100 + chars100 + chars100 + chars100 + chars100;
+// String chars1000 = chars100 + chars100 + chars100 + chars100 + chars100 +
+//                    chars100 + chars100 + chars100 + chars100 + chars100;
+
+String chars10 = "abcdefghij";
+// String chars20 = chars10 + chars10;
 
 void printKiloBytes(uint32_t kiloBytes) {
   auto start = millis();
   // for (int i = 0; i < kiloBytes * 1000; ++i) {
   //   SERIAL_TO_TEST.print("a");
   // }
-  for (int i = 0; i < kiloBytes * 10; ++i) {
-    SERIAL_TO_TEST.print(chars100);
+  for (int i = 0; i < kiloBytes * 100; ++i) {
+    SERIAL_TO_TEST.print(chars10);
   }
+  // for (int i = 0; i < kiloBytes * 50; ++i) {
+  //   SERIAL_TO_TEST.print(chars20);
+  // }
+  // for (int i = 0; i < kiloBytes * 10; ++i) {
+  //   SERIAL_TO_TEST.print(chars100);
+  // }
   // for (int i = 0; i < kiloBytes; ++i) {
   //   SERIAL_TO_TEST.print(chars1000);
   // }
