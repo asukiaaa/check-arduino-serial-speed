@@ -22,13 +22,24 @@ void printWithScaleChar(float val) {
   }
 }
 
+String chars100 = String("0aaaaaaaaa") + "1aaaaaaaaa" + "2aaaaaaaaa" +
+                  "3aaaaaaaaa" + "4aaaaaaaaa" + "5aaaaaaaaa" + "6aaaaaaaaa" +
+                  "7aaaaaaaaa" + "8aaaaaaaaa" + "9aaaaaaaaa";
+
+String chars1000 = chars100 + chars100 + chars100 + chars100 + chars100 +
+                   chars100 + chars100 + chars100 + chars100 + chars100;
+
 void printKiloBytes(uint32_t kiloBytes) {
   auto start = millis();
-  for (int i = 0; i < kiloBytes * 1000; ++i) {
-    SERIAL_TO_TEST.print("a");
+  // for (int i = 0; i < kiloBytes * 1000; ++i) {
+  //   SERIAL_TO_TEST.print("a");
+  // }
+  for (int i = 0; i < kiloBytes * 10; ++i) {
+    SERIAL_TO_TEST.print(chars100);
   }
-  SERIAL_TO_TEST.println();
-  SERIAL_TO_TEST.flush();
+  // for (int i = 0; i < kiloBytes; ++i) {
+  //   SERIAL_TO_TEST.print(chars1000);
+  // }
   auto diffMs = millis() - start;
   SERIAL_TO_TEST.println("print " + String(kiloBytes) + "K for " +
                          String(diffMs) + "ms");
